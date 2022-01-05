@@ -7,11 +7,23 @@
   "scripts": {
     "test": "npx dene"
   },
-  "author": "Botocrat Software",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "Alper Kursat Unver",
   "keywords": ["telegram", "bot", "api", "nodejs", "bent", "slimbot"],
   "license": "MIT",
   "dependencies": {
     "bent": "7.3.12",
     "form-data": "^4.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/botocrats/telegram.git"
+  },
+  "bugs": {
+    "url": "https://github.com/botocrats/telegram/issues"
+  },
+  "homepage": "https://github.com/botocrats/telegram#readme"
 }
