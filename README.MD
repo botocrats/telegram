@@ -10,13 +10,10 @@ Tested Node version: [15.4.0](https://github.com/nodejs/node/releases/tag/v15.4.
 
 - You don't have to think about the order of the arguments, same as official API
 - Smallest size(< 4 kb)
-- Minimal dependencies (request-promise)
+- Minimal dependencies
 - Future-proof (Only types will added on Telegram API changes)
 - [Bent](https://github.com/mikeal/bent) as http requester
 
-## Resources
-
-- [Official Telegram Bot API Documentation](https://core.telegram.org/bots/api)
 
 ## Getting started
 
@@ -57,6 +54,12 @@ const file = await client
 fs.writeFileSync("fileName.ext", file)
 ...
 ```
+
+No need for extra documentation, methods and parameters explained in Official Telegram Bot API Documentation
+
+## Resources
+
+- [Official Telegram Bot API Documentation](https://core.telegram.org/bots/api)
 
 ### License
 
