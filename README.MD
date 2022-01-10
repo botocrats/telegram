@@ -1,12 +1,11 @@
 # Telegram Bot Client
 
-[![npm version](https://badge.fury.io/js/@botocrat%2Ftelegram.svg)](https://npmjs.com/package/@botocrat/telegram)
-
-A fuss-free, light-weight wrapper Telegram Client for Node.js.
+Simple, light-weight Telegram Bot Client for Node.js.
 
 Tested Node version: [15.4.0](https://github.com/nodejs/node/releases/tag/v15.4.0).
 
-[Telegram Bot API 5.6](https://core.telegram.org/bots/api#december-30-2021)
+
+[![npm version](https://badge.fury.io/js/@botocrat%2Ftelegram.svg)](https://npmjs.com/package/@botocrat/telegram) [Telegram Bot API 5.6](https://core.telegram.org/bots/api#december-30-2021)
 
 ## What's the difference?
 
