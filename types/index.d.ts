@@ -4,22 +4,20 @@ import { ITStickerMethods } from './objects/sticker'
 import { ITPreCheckoutQuery, ITShippingQuery, ITPaymentMethods, ITInvoice, ITSuccessfulPayment } from './payment'
 import { ITGameMethods } from './objects/game'
 import { ITPoll, ITPollAnswer } from './objects/poll'
-import { ITInlineQuery, TTAnswerInlineQueryMethod } from "./inline"
+import { ITInlineQuery, TTAnswerInlineQueryMethod } from './inline'
 import { ITCommandMethods } from './commands'
 import { ITWebHookMethods } from './webhook'
 import { ITLocationMethods, ITProximityAlertTriggered } from './objects/location'
 import { ITFileMethods, ITPhotoSize } from './objects/file'
 import { ITMe, ITUser } from './user'
 
-interface ITClientOptions {
+export interface ITClientOptions {
   token: string
-  baseUri?: string // default: 'https://api.telegram.org/bot'
-  fileUri?: string // default: 'https://api.telegram.org/file/bot'
+  baseUri?: string // default: 'https://api.telegram.org'
   fileSizeLimit?: number // default: Infinity
-  debug?: (error: {}) => void /* default: false */
-
+  debug?: (error: {}) => void // default: false
 }
-interface ITAnswerCallbackQueryParams {
+export interface ITAnswerCallbackQueryParams {
   callback_query_id: string
   text?: string
   show_alert?: boolean
@@ -27,7 +25,7 @@ interface ITAnswerCallbackQueryParams {
   cache_time?: number
 }
 
-interface ITCallbackQuery {
+export interface ITCallbackQuery {
   id: string
   from: ITUser
   message?: ITMessage
@@ -36,7 +34,7 @@ interface ITCallbackQuery {
   data?: string
   game_short_name?: string
 }
-interface ITUpdate {
+export interface ITUpdate {
   update_id: number
   message?: ITMessage
   channel_post?: ITMessage
@@ -74,7 +72,7 @@ export interface ITServiceMessage {
   voice_chat_scheduled: {start_date: number}
   voice_chat_started: {}
   voice_chat_ended: {duration: number}
-  voice_chat_participants_invited:{users: ITUser}
+  voice_chat_participants_invited: {users: ITUser}
 }
 
 export interface ITelegramClient extends ITChatMethods, ITStickerMethods, ITGameMethods, ITMessageMethods, ITPaymentMethods, ITCommandMethods, ITWebHookMethods, ITLocationMethods, ITFileMethods {
@@ -84,7 +82,7 @@ export interface ITelegramClient extends ITChatMethods, ITStickerMethods, ITGame
   answerCallbackQuery: (params: ITAnswerCallbackQueryParams) => Promise<void>
   answerInlineQuery: TTAnswerInlineQueryMethod
 }
-export { ITInlineQuery, ITUpdate, ITClientOptions, ITCallbackQuery, ITMessage}
+export { ITInlineQuery, ITMessage}
 export { ITSendParams, ITCopyMessageParams } from './message/send'
 
 declare const createTelegramClient: (options?: ITClientOptions) => ITelegramClient

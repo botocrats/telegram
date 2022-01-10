@@ -1,6 +1,6 @@
-import { ITUser } from "../user";
-import { ITLocationBasic } from "../objects/location";
-import { TTInlineQueryResult } from "./objects";
+import { ITUser } from '../user'
+import { ITLocationBasic } from '../objects/location'
+import { TTInlineQueryResult } from './objects'
 
 export interface ITInlineQuery {
   id: string

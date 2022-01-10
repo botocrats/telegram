@@ -1,10 +1,11 @@
-import { ITMessageEntity } from "../message";
-import { ITUser } from "../user";
+import { ITMessageEntity } from '../message'
+import { ITUser } from '../user'
+type JSON<T> = string | T
 
 export enum ETPollType {
-  Default = "regular",
-  Quiz = "quiz",
-  Regular = "regular",
+  Default = 'regular',
+  Quiz = 'quiz',
+  Regular = 'regular'
 }
 
 interface ITPollOption {
@@ -32,5 +33,5 @@ export interface ITQuiz extends ITPoll {
   type: ETPollType.Quiz
   correct_option_id: number
   explanation?: string
-  explanation_entities?: ITMessageEntity[]
+  explanation_entities?: JSON<ITMessageEntity[]>
 }

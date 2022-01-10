@@ -1,9 +1,10 @@
-import { ITInlineKeyboardMarkup } from "../message/reply_markup"
-import {ITContact, TTParseMode} from '../message/send'
-import {ITMessageEntity} from '../message'
-import {ITLiveLocation, ITLocationBasic, ITVenueBase} from '../objects/location'
-import {ITInvoiceProposal} from '../payment'
+import { ITInlineKeyboardMarkup } from '../message/reply_markup'
+import { ITContact, ETParseMode } from '../message/send'
+import { ITMessageEntity } from '../message'
+import { ITLiveLocation, ITLocationBasic, ITVenueBase } from '../objects/location'
+import { ITInvoiceProposal } from '../payment'
 
+// TODO add missing types
 export type TTInlineQueryResult = ITInlineQueryResultCachedAudio
 | ITInlineQueryResultCachedDocument
 | ITInlineQueryResultCachedGif
@@ -26,8 +27,8 @@ export type TTInlineQueryResult = ITInlineQueryResultCachedAudio
 | ITInlineQueryResultVoice
 
 declare enum ETInlineResultType {
-  Article="article",
-  Photo="photo"
+  Article = 'article',
+  Photo = 'photo'
 }
 
 interface ITThumb {
@@ -36,7 +37,7 @@ interface ITThumb {
   thumb_width?: number
 }
 
-interface ITInlineQueryResultArticle extends ITThumb{
+interface ITInlineQueryResultArticle extends ITThumb {
   id: string
   type: ETInlineResultType.Article
   input_message_content: TTInputMessageContent
@@ -59,16 +60,16 @@ interface ITInlineQueryResultPhoto {
   thumb_width?: number
 }
 
-interface TTInputTextMessageContent{
+interface TTInputTextMessageContent {
   message_text: string
-  parse_mode?: TTParseMode
+  parse_mode?: ETParseMode
   entities?: ITMessageEntity[]
   disable_web_page_preview?: boolean
 }
 
 type TTInputLocationMessageContent = ITLiveLocation
 type TTInputVenueMessageContent = ITVenueBase & Required<ITLocationBasic>
-type TTInputContactMessageContent = Omit<ITContact, "user_id">
+type TTInputContactMessageContent = Omit<ITContact, 'user_id'>
 type TTInputInvoiceMessageContent = ITInvoiceProposal
 
 export type TTInputMessageContent = TTInputTextMessageContent

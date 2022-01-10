@@ -8,19 +8,19 @@ interface ITBotCommand {
 }
 
 type ITBotCommandScopeDefault = {
-    type: "default"
+    type: 'default'
 }
 declare enum ETBotCommandScope  {
-    Default = "{\"type\":\"default\"}",
-    AllPrivateChats = "{\"type\":\"all_private_chats\"}",
-    AllGroupChats = "{\"type\":\"all_group_chats\"}",
-    AllChatAdministrators = "{\"type\":\"all_chat_administrators\"}",
+    Default = '{"type":"default"}',
+    AllPrivateChats = '{"type":"all_private_chats"}',
+    AllGroupChats = '{"type":"all_group_chats"}',
+    AllChatAdministrators = '{"type":"all_chat_administrators"}',
 }
 interface ITBotCommandScopeChat extends ITChatId{
-    type: "chat" | "chat_administrators"
+    type: 'chat' | 'chat_administrators'
 }
 interface ITBotCommandScopeChatMember extends ITChatId, ITUserId {
-    type: "chat_member"
+    type: 'chat_member'
 }
 
 interface ITSetMyCommandParams extends ITGetMyCommandParams{

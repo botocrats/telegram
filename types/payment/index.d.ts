@@ -1,4 +1,4 @@
-import { TTCurrency } from "./currency"
+import { TTCurrency } from './currency'
 import {ITUser} from '../user'
 import {JSON} from '../message/send'
 

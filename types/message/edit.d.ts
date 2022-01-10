@@ -1,7 +1,8 @@
 import { ITMessage } from ".";
 import { ITChatId } from "../chat";
 import { ITReplyMarkup } from "./reply_markup";
-import { ITCaption, ITText, TTAttachmentType } from "./send";
+import { ITCaption, ITText } from "./send";
+import { TTAttachment } from "../objects/file"
 interface ITEditParameters extends ITChatId {
   message_id?: number
   inline_message_id?: string
@@ -11,6 +12,6 @@ interface ITEditParameters extends ITChatId {
 export interface ITEditMethods {
   editMessageText: (params: ITEditParameters & ITText) => Promise<ITMessage>
   editMessageCaption: (params: ITEditParameters & ITCaption) => Promise<ITMessage>
-  editMessageMedia: (params: ITEditParameters & { media: TTAttachmentType }) => Promise<ITMessage>
+  editMessageMedia: (params: ITEditParameters & { media: TTAttachment }) => Promise<ITMessage>
   editMessageReplyMarkup: (params: ITEditParameters) => Promise<ITMessage>
 }

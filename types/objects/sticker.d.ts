@@ -1,11 +1,9 @@
-import { TTAttachmentType } from "../message"
-import { ITFile, ITPhotoSize } from './file'
-
+import { ITFile, ITPhotoSize, TTAttachment } from './file'
 export interface ITAnimation {
   file_id: string
   file_unique_id: string
-  width:number
-  height:number
+  width: number
+  height: number
   thumb?: ITPhotoSize
   duration: number
   file_name?: string
@@ -40,12 +38,12 @@ interface ITMaskPosition {
 
 export interface ITStickerMethods {
   getStickerSet: (params: {name: string}) => Promise<ITStickerSet>
-  uploadStickerFile: (params: { user_id: number, png_sticker: TTAttachmentType }) => Promise<ITFile>
+  uploadStickerFile: (params: { user_id: number, png_sticker: TTAttachment }) => Promise<ITFile>
   createNewStickerSet: (params: ITCreateStickerSetParams) => Promise<boolean>
   addStickerToSet: (params: ITAddToStickerSetParams) => Promise<boolean>
   setStickerPositionInSet: (params: {sticker: string, position: number}) => Promise<boolean>
   deleteStickerFromSet: (params: { sticker: string }) => Promise<boolean>
-  setStickerSetThumb: (params: {name: string, user_id: number, thumb: TTAttachmentType}) => Promise<boolean>
+  setStickerSetThumb: (params: {name: string, user_id: number, thumb: TTAttachment}) => Promise<boolean>
 }
 
 
@@ -55,8 +53,8 @@ interface ITCreateStickerSetParams extends ITAddToStickerSetParams {
 interface ITAddToStickerSetParams {
   user_id: number
   name: string
-  png_sticker?:	TTAttachmentType
-  tgs_sticker?: TTAttachmentType
+  png_sticker?:	TTAttachment
+  tgs_sticker?: TTAttachment
   emojis: string 
   contains_masks?: boolean
   mask_position?: ITMaskPosition

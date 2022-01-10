@@ -1,6 +1,7 @@
 import { ITUser } from '..'
 import { ITChat } from '../chat'
-export { ITMessageMethods, TTAttachmentType } from './send'
+export { ITMessageMethods } from './send'
+import { TTAttachment } from "../objects/file"
 
 export enum ETDiceEmoji {
   Default = "🎲",

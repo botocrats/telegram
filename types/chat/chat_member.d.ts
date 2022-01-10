@@ -1,5 +1,5 @@
-import { ITChat, ITChatInviteLink } from "."
-import { ITUser } from "../user"
+import { ITChat, ITChatInviteLink } from '.'
+import { ITUser } from '../user'
 type ITChatMember = ITChatMemberOwner
   | ITChatMemberAdministrator
   | ITChatMemberMember
@@ -8,12 +8,12 @@ type ITChatMember = ITChatMemberOwner
   | ITChatMemberBanned
 
 export enum ETChatMemberStatus {
-  Owner = "creator",
-  Admin = "administrator",
-  Member = "member",
-  Restricted = "restricted",
-  Left = "left",
-  Banned = "kicked"
+  Owner = 'creator',
+  Admin = 'administrator',
+  Member = 'member',
+  Restricted = 'restricted',
+  Left = 'left',
+  Banned = 'kicked'
 }
 
 

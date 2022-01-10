@@ -1,14 +1,16 @@
 import { ITUser } from '../user'
-import { ITMessage, TTAttachmentType } from '../message'
+import { ITMessage } from '../message'
 import { ITLocationBasic } from '../objects/location'
-import { ITChatMember, ITChatMemberAdministrator, ITChatMemberOwner } from "./chat_member"
-export { ITChatMemberUpdated } from "./chat_member"
+import { TTAttachment } from '../objects/file'
+import { ITChatPhoto } from '../objects/file'
+import { ITChatMember, ITChatMemberAdministrator, ITChatMemberOwner } from './chat_member'
+export { ITChatMemberUpdated } from './chat_member'
 
 export enum ETChatType {
-  Private = "private",
-  Group = "group",
-  SuperGroup = "supergroup",
-  Channel = "channel"
+  Private = 'private',
+  Group = 'group',
+  SuperGroup = 'supergroup',
+  Channel = 'channel'
 }
 export interface ITChat {
   id: number 
@@ -20,12 +22,7 @@ export interface ITChat {
 }
 
 export interface ITChatDetailed extends ITChat {
-  photo?: {
-    small_file_id: string
-    small_file_unique_id: string
-    big_file_id: string
-    big_file_unique_id: string
-  }
+  photo?: ITChatPhoto
   bio?: string
   has_private_forwards?: boolean
   description?: string
@@ -52,15 +49,20 @@ export interface ITChatPermissions {
   can_pin_messages?: boolean
 }
 interface ITChatInviteLinkOptionals {
+  name?: string
   expire_date?: number
   member_limit?: number
+  creates_join_request?: boolean
 }
+
 interface ITChatInviteLink extends ITChatInviteLinkOptionals{
   invite_link: string
   creator: ITUser
   is_primary: boolean
   is_revoked: boolean
+  pending_join_request_count?: number
 }
+
 export interface ITChatId {
   chat_id: number | string
 }
@@ -69,16 +71,15 @@ export interface ITUserId extends ITChatId{
 }
 
 export enum ETChatActionType {
-  Message= "typing",
-  Photo="upload_photo",
-  Document= "upload_document",
-  Voice= "upload_voice",
-  VoiceNote= "upload_voice_note",
-  Video= "record_video",
-  Location = "find_location",
-  Sticker = "choose_sticker"
+  Message = 'typing',
+  Photo ='upload_photo',
+  Document = 'upload_document',
+  Voice = 'upload_voice',
+  VoiceNote = 'upload_voice_note',
+  Video = 'record_video',
+  Location = 'find_location',
+  Sticker = 'choose_sticker'
 }
-
 
 export interface ITChatJoinRequest {
   chat:	ITChat	// Chat to which the request was sent
@@ -103,9 +104,9 @@ export interface ITChatMethods {
   setChatPermissions: (params: ITChatId&{permissions: ITChatPermissions}) => Promise<boolean>
   exportChatInviteLink: (params: ITChatId) => Promise<string>
   createChatInviteLink: (params: ITChatId & ITChatInviteLinkOptionals) => Promise<ITChatInviteLink>
-  editChatInviteLink:(params:ITChatId & ITChatInviteLinkOptionals) => Promise<ITChatInviteLink>
+  editChatInviteLink:(params:ITChatId & {invite_link: string} & ITChatInviteLinkOptionals) => Promise<ITChatInviteLink>
   revokeChatInviteLink:(params:ITChatId & {invite_link: string}) => Promise<ITChatInviteLink>
-  setChatPhoto: (params: ITChatId & {photo: TTAttachmentType}) => Promise<boolean>
+  setChatPhoto: (params: ITChatId & {photo: TTAttachment}) => Promise<boolean>
   deleteChatPhoto: (params: ITChatId) => Promise<boolean>
   setChatTitle: (params: ITChatId & {title: string }) => Promise<boolean>
   setChatDescription: (params: ITChatId & { description: string }) => Promise<boolean>

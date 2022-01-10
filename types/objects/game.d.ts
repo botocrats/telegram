@@ -1,5 +1,5 @@
-import { ITMessageEntity } from "../message"
-import { ITAnimation } from "./sticker"
+import { ITMessageEntity } from '../message'
+import { ITAnimation } from './sticker'
 import {ITPhotoSize} from './file'
 import {ITUser} from '../user'
 

@@ -9,7 +9,7 @@ export interface ITUser {
     language_code: ETLanguageCode
 }
 
-export interface ITMe extends Omit<ITUser,"language_code"> {
+export interface ITMe extends Omit<ITUser, 'language_code'> {
     can_join_group: boolean
     can_read_all_group_messages: boolean
     supports_inline_queries: boolean

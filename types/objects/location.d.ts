@@ -1,5 +1,5 @@
-import { ITUser } from "../user"
-import { ITMessage } from "../message"
+import { ITUser } from '../user'
+import { ITMessage } from '../message'
 
 
 export interface ITLocationBasic {
