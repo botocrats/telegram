@@ -2,10 +2,12 @@
 
 Simple, light-weight Telegram Bot Client for Node.js.
 
-Tested Node version: [15.4.0](https://github.com/nodejs/node/releases/tag/v15.4.0).
-
-
-[![npm version](https://badge.fury.io/js/@botocrat%2Ftelegram.svg)](https://npmjs.com/package/@botocrat/telegram) [Telegram Bot API 5.6](https://core.telegram.org/bots/api#december-30-2021)
+[![NodeJS][nodejs-image]][npm-url]
+[![npm][npm-image]][npm-url]
+[![telegram 5.6][telegram-image]][telegram-url]
+[![size][size-image]][npm-url]
+[![license mit][license-image]][github-url]
+[![last commit][lastcommit-image]][github-url]
 
 ## What's the difference?
 
@@ -13,7 +15,7 @@ Tested Node version: [15.4.0](https://github.com/nodejs/node/releases/tag/v15.4.
 - Smallest size(< 5 kb)
 - Minimal dependencies
 - Future-proof (Only types will added on Telegram API changes)
-- [Bent](https://github.com/mikeal/bent) as http requester
+- [Bent][bent-url] as http requester
 
 ## Getting started
 
@@ -68,8 +70,20 @@ No need for extra documentation, methods and parameters explained in Official Te
 
 ## Resources
 
-- [Official Telegram Bot API Documentation](https://core.telegram.org/bots/api)
+- [Official Telegram Bot API Documentation][telegram-url]
 
 ### License
 
-MIT
+MIT License
+
+[license-image]: https://img.shields.io/github/license/botocrats/telegram?style=flat-square
+[size-image]: https://img.shields.io/bundlephobia/minzip/@botocrat/telegram?style=flat-square
+[nodejs-image]: https://img.shields.io/badge/library-NodeJS-darkgreen.svg?style=flat-square
+[telegram-image]: https://img.shields.io/badge/telegram%20bot%20api-5.6-00aced.svg?style=flat-square&logo=telegram
+[npm-image]: https://img.shields.io/npm/v/@botocrat/telegram.svg?style=flat-square
+[lastcommit-image]: https://img.shields.io/github/last-commit/botocrats/telegram?style=flat-square
+
+[telegram-url]: https://core.telegram.org/bots/api#december-30-2021
+[npm-url]: https://npmjs.org/package/@botocrat/telegram
+[github-url]: https://github.com/botocrats/telegram
+[bent-url]: https://github.com/mikeal/bent
