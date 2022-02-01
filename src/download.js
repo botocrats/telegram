@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 module.exports = ({token, baseUri, fileSizeLimit: max}) => {
   const request = require('bent')(baseUri + '/file/bot' + token + '/', 'GET')
   

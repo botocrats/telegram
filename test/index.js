@@ -14,10 +14,10 @@ if (!process.env.TEST_CHAT_ID) {
   process.exit(1);
 }
 const chat_id = process.env.TEST_CHAT_ID
-
+const file_id = "AgACAgQAAx0ESTL-FQACARdh-b9i4dboNlj6-j31Gf7x8vHhnQACeLcxG5nl0VPx5i_9jRdB_wEAAwIAA3kAAyME"
 const client = createClient({
   token: process.env.BOT_TOKEN,
-  debug: (err)=>console.log(err)
+  debug: (err) => console.log(err)
 });
 const photoStream = fs.createReadStream(__dirname + "/file.jpg")
 let test = (module.exports = {
@@ -28,8 +28,7 @@ let test = (module.exports = {
     client
       .sendPhoto({
         chat_id,
-        photo:
-          "AgACAgQAAx0CSTL-FQADp2HbVIFNUHAsLOG0G9fKpI941YZ4AALcvTEbuNXYUr7v8WP1OAWTAQADAgADeQADIwQ",
+        photo: file_id,
       })
       .then((e) =>
         e.photo && e.photo instanceof Array
@@ -38,10 +37,7 @@ let test = (module.exports = {
       ),
   download: () =>
     client
-      .getFile({
-        file_id:
-          "AgACAgQAAx0CSTL-FQADp2HbVIFNUHAsLOG0G9fKpI941YZ4AALcvTEbuNXYUr7v8WP1OAWTAQADAgADeQADIwQ",
-      })
+      .getFile({file_id})
       .then(client.download)
       .then(([buffer, ext, size]) => {
         fs.writeFileSync(__dirname + "/file." + ext, buffer);
@@ -53,11 +49,10 @@ let test = (module.exports = {
         chat_id,
         photo: photoStream,
       })
-      .then((e) =>
+      .then((e) => 
         e.photo && e.photo instanceof Array
           ? true
-          : Promise.reject("Should upload photo")
-      ),
+          : Promise.reject("Should upload photo")),
   uploadMediaGroup: async () =>
     client
       .sendMediaGroup({

@@ -1,41 +1,40 @@
-/// <reference types="node"/>
 import {ETDiceEmoji, ITMessage, ITMessageEntity} from '.'
 
 import { ITReplyMarkup } from "./reply_markup"
 import { ITInvoiceProposal} from "../payment"
-import { ITChatId } from "../chat"
+import { ITChatId, TTChatIdType } from "../chat"
 import { ITLocationBasic, ITLiveLocation, ITVenueBase } from "../objects/location"
 import { ITEditMethods } from "./edit"
 import { ITPoll, ITQuiz } from '../objects/poll'
 import { ITInputMedia } from "../objects/media";
 import { TTAttachment } from "../objects/file"
+import { JSON } from '..'
 
 type TTLocation = ITLocationBasic | ITLiveLocation
-enum ETParseMode {
+declare enum ETParseMode {
   Markdown='Markdown',
   MarkdownV2=' MarkdownV2',
   HTML=' HTML',
 }
-type JSON<T> = string | T
 export interface ITMediaCommon {
   thumb?: TTAttachment
   duration?: number
 }
-interface ITSendParameters extends ITChatId{
+interface ITSendParameters extends ITChatId {
   disable_notification?: boolean
   protect_content?: boolean
   reply_to_message_id?: number
   allow_sending_without_reply?: boolean
-  reply_markup?: ITReplyMarkup
+  reply_markup?: JSON<ITReplyMarkup>
 }
 export interface ITCaption {
   caption?: string
-  captionEntities?: ITMessageEntity[]
+  captionEntities?: JSON<ITMessageEntity[]>
   parse_mode?: ETParseMode
 }
 export interface ITText {
   text: string
-  entities?: ITMessageEntity[]
+  entities?: JSON<ITMessageEntity[]>
   parse_mode?: ETParseMode
   disable_web_page_preview?: boolean
 }
@@ -46,7 +45,7 @@ interface ITContact {
   user_id?: number
   vcard?: string
 }
-interface ITForwardMessageParams extends ITChatId{
+interface ITForwardMessageParams extends ITChatId {
   from_chat_id: number | string
   disable_notification?: boolean
   protect_content?: boolean
@@ -63,7 +62,7 @@ export interface ITAudioParams {
   title?: string
 }
 export type ITCopyMessageParams = ITSendParams["Message"] & {from_chat_id: TTChatIdType, message_id: number}
-export interface ITSendParams{
+export interface ITSendParams {
   Message: ITSendParameters & ITText
   Dice: ITSendParameters & {
     emoji: ETDiceEmoji

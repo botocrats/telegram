@@ -1,6 +1,6 @@
-import { TTCurrency } from './currency'
+import {JSON} from '..'
 import {ITUser} from '../user'
-import {JSON} from '../message/send'
+import { TTCurrency } from './currency'
 
 export {TTCurrency}
 export interface ITInvoice {

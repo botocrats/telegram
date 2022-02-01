@@ -51,7 +51,7 @@ export interface ITUpdate {
   chat_member?: ITChatMemberUpdated
   chat_join_request?: ITChatJoinRequest
 }
-type JSON<T> = string | T
+export type JSON<T> = string | T // json serialized T: JSON.stringify(item)
 
 export interface ITServiceMessage {
   new_chat_members: ITUser[]

@@ -4,7 +4,7 @@ Simple, light-weight Telegram Bot Client for Node.js.
 
 [![NodeJS][nodejs-image]][npm-url]
 [![npm][npm-image]][npm-url]
-[![telegram 5.6][telegram-image]][telegram-url]
+[![telegram 5.7][telegram-image]][telegram-url]
 [![size][size-image]][npm-url]
 [![license mit][license-image]][github-url]
 [![last commit][lastcommit-image]][github-url]
@@ -83,7 +83,7 @@ MIT License
 [npm-image]: https://img.shields.io/npm/v/@botocrat/telegram.svg?style=flat-square
 [lastcommit-image]: https://img.shields.io/github/last-commit/botocrats/telegram?style=flat-square
 
-[telegram-url]: https://core.telegram.org/bots/api#december-30-2021
+[telegram-url]: https://core.telegram.org/bots/api#january-31-2022
 [npm-url]: https://npmjs.org/package/@botocrat/telegram
 [github-url]: https://github.com/botocrats/telegram
 [bent-url]: https://github.com/mikeal/bent

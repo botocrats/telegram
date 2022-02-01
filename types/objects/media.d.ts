@@ -1,13 +1,13 @@
 import {ITCaption, ITVideoParams, ITAudioParams, ITMediaCommon } from '../message/send'
 import { TTAttachment } from '../objects/file'
 
-export type ITInputMedia = InputMediaAnimation
-  | InputMediaDocument
-  | InputMediaAudio
-  | InputMediaPhoto
-  | InputMediaVideo
+export type ITInputMedia = ITInputMediaAnimation
+  | ITInputMediaDocument
+  | ITInputMediaAudio
+  | ITInputMediaPhoto
+  | ITInputMediaVideo
 
-enum ETInputMediaType {
+declare enum ETInputMediaType {
   Animation = 'animation',
   Document = 'document',
   Audio = 'audio',

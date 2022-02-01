@@ -1,7 +1,6 @@
 import { ITUser } from '../user'
 import { ITMessage } from '../message'
 
-
 export interface ITLocationBasic {
   longitude: number
   latitude: number

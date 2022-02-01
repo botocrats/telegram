@@ -4,6 +4,7 @@ import { ITLocationBasic } from '../objects/location'
 import { TTAttachment } from '../objects/file'
 import { ITChatPhoto } from '../objects/file'
 import { ITChatMember, ITChatMemberAdministrator, ITChatMemberOwner } from './chat_member'
+import { JSON } from '..'
 export { ITChatMemberUpdated } from './chat_member'
 
 export enum ETChatType {
@@ -55,18 +56,18 @@ interface ITChatInviteLinkOptionals {
   creates_join_request?: boolean
 }
 
-interface ITChatInviteLink extends ITChatInviteLinkOptionals{
+export interface ITChatInviteLink extends ITChatInviteLinkOptionals {
   invite_link: string
   creator: ITUser
   is_primary: boolean
   is_revoked: boolean
   pending_join_request_count?: number
 }
-
+export type TTChatIdType = number | string // number: chat id, string: username
 export interface ITChatId {
-  chat_id: number | string
+  chat_id: TTChatIdType
 }
-export interface ITUserId extends ITChatId{
+export interface ITUserId extends ITChatId{ 
   user_id: number
 }
 
@@ -96,12 +97,12 @@ export interface ITChatMethods {
   sendChatAction: (params: ITChatId & {action: ETChatActionType}) => Promise<boolean>
   banChatMember: (params: ITUserId & { only_if_banned?: boolean, until_date?: number, revoke_messages?: boolean }) => Promise<boolean>
   unbanChatMember: (params: ITUserId & { only_if_banned?: boolean }) => Promise<boolean>
-  restrictChatMember: (params: ITUserId & { permissions: ITChatPermissions, until_date?: number }) => Promise<boolean>
-  promoteChatMember: (params: ITUserId & ITAdminPermissions) => Promise<boolean>
+  restrictChatMember: (params: ITUserId & { permissions: JSON<ITChatPermissions>, until_date?: number }) => Promise<boolean>
+  promoteChatMember: (params: ITUserId & ITChatId & Omit<ITChatMemberAdministrator, "status"| "can_be_edited">) => Promise<boolean>
   setChatAdministratorCustomTitle: (params: ITUserId & { custom_title: string }) => Promise<boolean>
   banChatSenderChat: (params: ITChatId & {sender_chat_id: number}) => Promise<boolean>
   unbanChatSenderChat: (params: ITChatId & {sender_chat_id: number}) => Promise<boolean>
-  setChatPermissions: (params: ITChatId&{permissions: ITChatPermissions}) => Promise<boolean>
+  setChatPermissions: (params: ITChatId&{permissions: JSON<ITChatPermissions>}) => Promise<boolean>
   exportChatInviteLink: (params: ITChatId) => Promise<string>
   createChatInviteLink: (params: ITChatId & ITChatInviteLinkOptionals) => Promise<ITChatInviteLink>
   editChatInviteLink:(params:ITChatId & {invite_link: string} & ITChatInviteLinkOptionals) => Promise<ITChatInviteLink>
