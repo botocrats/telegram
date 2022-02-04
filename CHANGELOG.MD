@@ -1,6 +1,12 @@
-#
+# Changelog
 
 ## 2022
+
+### February 2nd
+
++ Updated for Telegram Bot API 5.7
++ + Added support for [Video Stickers](https://telegram.org/blog/video-stickers-better-reactions>)
++ support for exceptional method [editMessageMedia](https://github.com/botocrats/telegram/issues/1)
 
 ### January 10th
 

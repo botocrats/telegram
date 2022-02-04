@@ -6,8 +6,10 @@ Simple, light-weight Telegram Bot Client for Node.js.
 [![npm][npm-image]][npm-url]
 [![telegram 5.7][telegram-image]][telegram-url]
 [![size][size-image]][npm-url]
-[![license mit][license-image]][github-url]
+[![quality][quality-image]][npm-url]
 [![last commit][lastcommit-image]][github-url]
+[![license mit][license-image]][github-url]
+![vulnerabilities][vulnerabilities-image]
 
 ## What's the difference?
 
@@ -76,12 +78,16 @@ No need for extra documentation, methods and parameters explained in Official Te
 
 MIT License
 
+
+
 [license-image]: https://img.shields.io/github/license/botocrats/telegram?style=flat-square
 [size-image]: https://img.shields.io/bundlephobia/minzip/@botocrat/telegram?style=flat-square
+[quality-image]: https://img.shields.io/npms-io/quality-score/@botocrat/telegram?style=flat-square
 [nodejs-image]: https://img.shields.io/badge/library-NodeJS-darkgreen.svg?style=flat-square
-[telegram-image]: https://img.shields.io/badge/telegram%20bot%20api-5.6-00aced.svg?style=flat-square&logo=telegram
+[telegram-image]: https://img.shields.io/badge/telegram%20bot%20api-5.7-00aced.svg?style=flat-square&logo=telegram
 [npm-image]: https://img.shields.io/npm/v/@botocrat/telegram.svg?style=flat-square
 [lastcommit-image]: https://img.shields.io/github/last-commit/botocrats/telegram?style=flat-square
+[vulnerabilities-image]: https://img.shields.io/snyk/vulnerabilities/npm/@botocrat/telegram
 
 [telegram-url]: https://core.telegram.org/bots/api#january-31-2022
 [npm-url]: https://npmjs.org/package/@botocrat/telegram
