@@ -79,6 +79,8 @@ export interface ITelegramClient extends ITChatMethods, ITStickerMethods, ITGame
   answerInlineQuery: TTAnswerInlineQueryMethod
 }
 export * from './inline'
+export * from './chat'
+export * from './user'
 export * from './message'
 export * from './objects'
 

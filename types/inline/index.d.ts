@@ -26,3 +26,4 @@ interface ITChosenInlineResult {
   inline_message_id?: string
   query?: string
 }
+export { TTInlineQueryResult }
