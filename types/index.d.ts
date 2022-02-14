@@ -1,14 +1,10 @@
 import { ITChatMethods, ITChatJoinRequest, ITChatMemberUpdated } from './chat'
 import { ITMessage, ITMessageMethods } from './message'
-import { ITStickerMethods } from './objects/sticker'
+import { ITStickerMethods, ITGameMethods, ITPoll, ITPollAnswer, ITFileMethods, ITPhotoSize, ITLocationMethods, ITProximityAlertTriggered } from './objects'
 import { ITPreCheckoutQuery, ITShippingQuery, ITPaymentMethods, ITInvoice, ITSuccessfulPayment } from './payment'
-import { ITGameMethods } from './objects/game'
-import { ITPoll, ITPollAnswer } from './objects/poll'
-import { ITInlineQuery, TTAnswerInlineQueryMethod } from './inline'
+import { ITInlineQuery, TTAnswerInlineQueryMethod, ITChosenInlineResult } from './inline'
 import { ITCommandMethods } from './commands'
 import { ITWebHookMethods } from './webhook'
-import { ITLocationMethods, ITProximityAlertTriggered } from './objects/location'
-import { ITFileMethods, ITPhotoSize } from './objects/file'
 import { ITMe, ITUser } from './user'
 
 export interface ITClientOptions {
@@ -41,7 +37,7 @@ export interface ITUpdate {
   edited_message?: ITMessage
   edited_channel_post?: ITMessage
   inline_query?: ITInlineQuery
-  chosen_inline_result?: ITInlineQuery
+  chosen_inline_result?: ITChosenInlineResult
   callback_query?: ITCallbackQuery
   shipping_query?: ITShippingQuery
   pre_checkout_query?: ITPreCheckoutQuery
@@ -82,8 +78,9 @@ export interface ITelegramClient extends ITChatMethods, ITStickerMethods, ITGame
   answerCallbackQuery: (params: ITAnswerCallbackQueryParams) => Promise<void>
   answerInlineQuery: TTAnswerInlineQueryMethod
 }
-export { ITInlineQuery, ITMessage}
-export { ITSendParams, ITCopyMessageParams } from './message/send'
+export * from './inline'
+export * from './message'
+export * from './objects'
 
 declare const createTelegramClient: (options?: ITClientOptions) => ITelegramClient
 export default createTelegramClient

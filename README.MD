@@ -19,6 +19,10 @@ Simple, light-weight Telegram Bot Client for Node.js.
 - Future-proof (Only types will added on Telegram API changes)
 - [Bent][bent-url] as http requester
 
+## What's missing?
+
+This library intented to make requests to Telegram Bot API server and handling responses only. Handling updates from telegram or other high level features is not a purpose of this library. Wait for the framework I'm currently working on, if you looking for such features.
+
 ## Getting started
 
 ```bash
@@ -64,7 +68,7 @@ fs.writeFileSync("fileName." + ext, data)
 | Param | Description | Default |
 |-|-|-|
 | token | Telegram bot token | *Required* |
-| debug | Debug function | () => void|
+| debug | Debug function | null |
 | baseUri | Telegram API url | _https://api.telegram.org_ |
 | fileSizeLimit | Size limiter for .download() method | Infinity (no limit) |
 

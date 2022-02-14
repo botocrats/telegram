@@ -1,13 +1,11 @@
-import {ETDiceEmoji, ITMessage, ITMessageEntity} from '.'
+import { ETDiceEmoji, ITMessage, ITMessageEntity } from '.'
 
 import { ITReplyMarkup } from "./reply_markup"
-import { ITInvoiceProposal} from "../payment"
+import { ITInvoiceProposal } from "../payment"
 import { ITChatId, TTChatIdType } from "../chat"
-import { ITLocationBasic, ITLiveLocation, ITVenueBase } from "../objects/location"
+import { ITLocationBasic, ITLiveLocation, ITVenueBase, ITPoll, ITQuiz, ITInputMedia, TTAttachment } from "../objects"
 import { ITEditMethods } from "./edit"
-import { ITPoll, ITQuiz } from '../objects/poll'
-import { ITInputMedia } from "../objects/media";
-import { TTAttachment } from "../objects/file"
+
 import { JSON } from '..'
 
 type TTLocation = ITLocationBasic | ITLiveLocation
@@ -29,7 +27,7 @@ interface ITSendParameters extends ITChatId {
 }
 export interface ITCaption {
   caption?: string
-  captionEntities?: JSON<ITMessageEntity[]>
+  caption_entities?: JSON<ITMessageEntity[]>
   parse_mode?: ETParseMode
 }
 export interface ITText {
@@ -91,9 +89,7 @@ export interface ITSendParams {
     thumb?: TTAttachment
   }
   Invoice: ITSendParameters & ITInvoiceProposal
-  Location: ITSendParameters & ITLiveLocation & {
-    live_period?: number
-  }
+  Location: ITSendParameters & TTLocation
   Venue: ITSendParameters & ITVenueBase
   Contact: ITSendParameters & ITContact
   Poll: ITSendParameters & Omit<(ITPoll | ITQuiz), "id">

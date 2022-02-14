@@ -9,6 +9,7 @@ export interface ITLocationBasic {
 export interface ITLiveLocation extends ITLocationBasic {
   heading?: number
   proximity_alert_radius?: number
+  live_period?: number
 }
 
 interface ITProximityAlertTriggered {

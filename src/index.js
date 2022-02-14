@@ -1,14 +1,9 @@
 'use strict'
 const streamMethods = require('./stream')
-const createRequester = require("./request");
+const createRequester = require('./request')
 const downloader = require('./download')
-const defaultOptions = {
-  baseUri: 'https://api.telegram.org',
-  fileSizeLimit: Infinity
-}
 
-module.exports = (options = {}) => {
-  const {token, debug, baseUri, fileSizeLimit} = {...defaultOptions, ...options}
+module.exports = ({token, debug, baseUri = 'https://api.telegram.org', fileSizeLimit = Infinity}) => {
   if(typeof token != 'string'){
     throw Error('you should provide valid token')
   }

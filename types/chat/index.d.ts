@@ -1,11 +1,9 @@
+import { JSON } from '..'
 import { ITUser } from '../user'
 import { ITMessage } from '../message'
-import { ITLocationBasic } from '../objects/location'
-import { TTAttachment } from '../objects/file'
-import { ITChatPhoto } from '../objects/file'
+import { ITLocationBasic, TTAttachment, ITChatPhoto } from '../objects'
 import { ITChatMember, ITChatMemberAdministrator, ITChatMemberOwner } from './chat_member'
-import { JSON } from '..'
-export { ITChatMemberUpdated } from './chat_member'
+export * from './chat_member'
 
 export enum ETChatType {
   Private = 'private',
@@ -83,11 +81,11 @@ export enum ETChatActionType {
 }
 
 export interface ITChatJoinRequest {
-  chat:	ITChat	// Chat to which the request was sent
-  from:	ITUser	// User that sent the join request
-  date:	number  // Date the request was sent in Unix time 
-  bio?:	string	// Bio of the user.
-  invite_link?:	ITChatInviteLink	// Chat invite link that was used by the user to send the join request
+  chat: ITChat // Chat to which the request was sent
+  from: ITUser // User that sent the join request
+  date: number // Date the request was sent in Unix time 
+  bio?: string // Bio of the user.
+  invite_link?: ITChatInviteLink // Chat invite link that was used by the user to send the join request
 }
 export interface ITChatLocation {
   location: ITLocationBasic

@@ -1,6 +1,8 @@
 import { ITUser } from '../user'
 import { ITChat } from '../chat'
-export { ITMessageMethods } from './send'
+export * from './send'
+export * from './edit'
+export * from './reply_markup'
 
 export enum ETDiceEmoji {
   Default = "🎲",

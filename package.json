@@ -1,6 +1,6 @@
 {
   "name": "@botocrat/telegram",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Simple, light-weight Telegram Bot Client for Node.js.",
   "main": "./src/index.js",
   "types": "./types/index.d.ts",

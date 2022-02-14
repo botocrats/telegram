@@ -1,5 +1,5 @@
 import { ITUser } from '../user'
-import { ITLocationBasic } from '../objects/location'
+import { ITLocationBasic } from '../objects'
 import { TTInlineQueryResult } from './objects'
 
 export interface ITInlineQuery {
@@ -9,7 +9,7 @@ export interface ITInlineQuery {
   query: string
   offset: string
 }
-interface ITAnswerInlineQueryParameters{
+interface ITAnswerInlineQueryParameters {
   inline_query_id: string
   results: TTInlineQueryResult[]
   cache_time: number
@@ -18,4 +18,11 @@ interface ITAnswerInlineQueryParameters{
   switch_pm_text?: string
   switch_pm_parameter?: string
 }
-export type TTAnswerInlineQueryMethod = (params: ITAnswerInlineQueryParameters) => Promise<void>
+export type TTAnswerInlineQueryMethod = (params: ITAnswerInlineQueryParameters) => Promise<true>
+interface ITChosenInlineResult {
+  result_id: string
+  from: ITUser
+  location: ITLocationBasic
+  inline_message_id?: string
+  query?: string
+}

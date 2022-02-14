@@ -1,5 +1,5 @@
-const FormData = require("form-data");
-const { handleError, catchTelegramError, catchException } = require("./error");
+const FormData = require('form-data')
+const { handleError, catchTelegramError, catchException } = require('./error')
 
 const handleResponse = (request, debug) =>
   (...params) =>
@@ -10,16 +10,16 @@ const handleResponse = (request, debug) =>
           ? err.json().then(catchTelegramError(params))
           : catchException(err, params)
       )
-      .catch(handleError(debug));
+      .catch(handleError(debug))
 
 const handleFormData = (request) =>
   (endpoint, params, formData = false) => {
     if (formData) {
       const form = new FormData();
       Object.entries(params).forEach((i) => form.append(i[0], i[1]));
-      return request(endpoint, form, form.getHeaders());
+      return request(endpoint, form, form.getHeaders())
     }
-    return request(endpoint, params);
+    return request(endpoint, params)
   }
 module.exports = (url, debug) =>
-  handleResponse(handleFormData(require("bent")(url, "json", "POST")), debug)
+  handleResponse(handleFormData(require('bent')(url, 'json', 'POST')), debug)

@@ -1,4 +1,4 @@
-import {ETPollType} from '../objects/poll'
+import {ETPollType} from '../objects'
 
 type ITInlineKeyboardButton = {
   text: string
