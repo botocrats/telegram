@@ -81,19 +81,18 @@ const client = createClient({
 ...
 ```
 
-## Client options
+## Parameters
 
 ### Required
 
-| Param | Description | Default |
-|-|-|-|
-| token | Telegram bot token | *Required* |
+| Param | Description |
+|-|-|
+| token | Telegram bot token |
 
 ### Optional
 
 | Param | Description | Default |
 |-|-|-|
-| token | Telegram bot token | *Required* |
 | debug | Debug function | null |
 | baseUri | Telegram API url | _https://api.telegram.org_ |
 | fileSizeLimit | Size limiter for .download() method | Infinity (no limit) |
