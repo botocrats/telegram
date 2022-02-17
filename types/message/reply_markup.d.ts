@@ -14,7 +14,7 @@ export interface ITInlineKeyboardMarkup {
   inline_keyboard: ITInlineKeyboardButton[][]
 }
 
-export interface ITReplyKeyboardMarkup{
+export interface ITReplyKeyboardMarkup {
   keyboard: {
     text: string
     request_contact?: boolean

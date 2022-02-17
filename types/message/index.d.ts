@@ -5,21 +5,21 @@ export * from './edit'
 export * from './reply_markup'
 
 export enum ETDiceEmoji {
-  Default = "🎲",
-  Dice = "🎲",
-  Dart = "🎯",
-  Bowling = "🎳",
-  Basketball ="🏀",
-  Football = "⚽",
-  Slot = "🎰"
+  Default = '🎲',
+  Dice = '🎲',
+  Dart = '🎯',
+  Bowling = '🎳',
+  Basketball ='🏀',
+  Football = '⚽',
+  Slot = '🎰'
 }
 interface ITDice {
   emoji: ETDiceEmoji
   value: number
 }
 
-type TTEntityType = "mention" | "hashtag" | "cashtag" | "url" | "email" | "phone_number"
-  | "bold" | "italic" | "strikethrough" | "code" | "pre" | "text_link" | "text_mention" | "spoiler"
+type TTEntityType = 'mention' | 'hashtag' | 'cashtag' | 'url' | 'email' | 'phone_number'
+  | 'bold' | 'italic' | 'strikethrough' | 'code' | 'pre' | 'text_link' | 'text_mention' | 'spoiler'
 
 export interface ITMessageEntity {
   type: TTEntityType

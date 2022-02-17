@@ -20,7 +20,35 @@
       "error",
       2
     ],
-    "@typescript-eslint/no-var-requires": "ignore",
+    "multiline": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "no-extra-semi": "off",
+    "@typescript-eslint/no-extra-semi": [
+      "error"
+    ],
+    "@typescript-eslint/semi": [
+      2,
+      "never"
+    ],
+    "@typescript-eslint/comma-spacing": [
+      2
+    ],
+    "@typescript-eslint/ban-types": [
+      1
+    ],
+    "@typescript-eslint/type-annotation-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true,
+        "overrides": {
+          "arrow": {
+            "before": true,
+            "after": true
+          }
+        }
+      }
+    ],
     "linebreak-style": [
       "error",
       "unix"

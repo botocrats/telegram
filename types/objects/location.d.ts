@@ -19,8 +19,8 @@ interface ITProximityAlertTriggered {
 }
 
 export interface ITLocationMethods {
-    editMessageLiveLocation: (params) => Promise <ITMessage|boolean>
-    stopMessageLiveLocation: (params) => Promise<ITMessage|boolean>
+    editMessageLiveLocation: (params) => Promise<ITMessage | boolean>
+    stopMessageLiveLocation: (params) => Promise<ITMessage | boolean>
 }
 
 export interface ITVenueBase {

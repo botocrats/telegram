@@ -1,7 +1,7 @@
 import { ITMessageEntity } from '../message'
 import { ITAnimation } from './sticker'
-import {ITPhotoSize} from './file'
-import {ITUser} from '../user'
+import { ITPhotoSize } from './file'
+import { ITUser } from '../user'
 
 interface ITGame {
   title: string

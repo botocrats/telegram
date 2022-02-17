@@ -8,7 +8,7 @@ interface ITBotCommand {
 
 type ITBotCommandScopeDefault = {
   type: 'default'
-};
+}
 declare enum ETBotCommandScope {
   Default = '{"type":"default"}',
   AllPrivateChats = '{"type":"all_private_chats"}',

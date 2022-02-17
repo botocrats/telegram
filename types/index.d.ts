@@ -11,7 +11,8 @@ export interface ITClientOptions {
   token: string
   baseUri?: string // default: 'https://api.telegram.org'
   fileSizeLimit?: number // default: Infinity
-  debug?: (error: {}) => void // default: false
+  debug?: (error: Error) => void // default: false
+  interceptor?: <T extends keyof ITelegramClient>(method: T, params?: {}, formData?: FormData) => any
 }
 export interface ITAnswerCallbackQueryParams {
   callback_query_id: string
@@ -52,23 +53,25 @@ export type JSON<T> = string | T // json serialized T: JSON.stringify(item)
 export interface ITServiceMessage {
   new_chat_members: ITUser[]
   left_chat_member: ITUser
-  new_chat_title:string
-  new_chat_photo:ITPhotoSize[]
+  new_chat_title: string
+  new_chat_photo: ITPhotoSize[]
   delete_chat_photo: true
   group_chat_created: true
   supergroup_chat_created: true
   channel_chat_created: true
-  message_auto_delete_timer_changed: {message_auto_delete_time: number}
+  message_auto_delete_timer_changed: {
+    message_auto_delete_time: number
+  }
   migrate_to_chat_id: number
   migrate_from_chat_id: number
   pinned_message: ITMessage
   invoice: ITInvoice
   successful_payment: ITSuccessfulPayment
   proximity_alert_triggered: ITProximityAlertTriggered
-  voice_chat_scheduled: {start_date: number}
+  voice_chat_scheduled: { start_date: number }
   voice_chat_started: {}
-  voice_chat_ended: {duration: number}
-  voice_chat_participants_invited: {users: ITUser}
+  voice_chat_ended: { duration: number }
+  voice_chat_participants_invited: { users: ITUser }
 }
 
 export interface ITelegramClient extends ITChatMethods, ITStickerMethods, ITGameMethods, ITMessageMethods, ITPaymentMethods, ITCommandMethods, ITWebHookMethods, ITLocationMethods, ITFileMethods {

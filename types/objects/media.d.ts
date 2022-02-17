@@ -1,4 +1,4 @@
-import {ITCaption, ITVideoParams, ITAudioParams, ITMediaCommon } from '../message/send'
+import { ITCaption, ITVideoParams, ITAudioParams, ITMediaCommon } from '../message/send'
 import { TTAttachment } from '../objects/file'
 
 export type ITInputMedia = ITInputMediaAnimation
@@ -21,10 +21,10 @@ export type ITInputMediaBase = ITCaption & {
 export interface ITInputMediaPhoto extends ITInputMediaBase {
   type: ETInputMediaType.Photo
 }
-export interface ITInputMediaVideo extends ITInputMediaBase, ITMediaCommon, Omit<ITVideoParams,'title'> {
+export interface ITInputMediaVideo extends ITInputMediaBase, ITMediaCommon, Omit<ITVideoParams, 'title'> {
   type: ETInputMediaType.Video
 }
-export interface ITInputMediaAnimation extends ITInputMediaBase,ITMediaCommon, Omit<ITVideoParams,'title'|'supports_streaming'> {
+export interface ITInputMediaAnimation extends ITInputMediaBase, ITMediaCommon, Omit<ITVideoParams, 'title'|'supports_streaming'> {
   type: ETInputMediaType.Animation
 }
 export interface ITInputMediaAudio extends ITInputMediaBase, ITMediaCommon, ITAudioParams {

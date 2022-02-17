@@ -26,9 +26,9 @@ module.exports.handleError = (debug) => (e) => {
   debug && (
     typeof debug === 'function' ? debug(e) : console.error(e)
   )
-  return debug? (()=>true): Promise.reject(e)
+  return debug ? (()=>true) : Promise.reject(e)
 }
-module.exports.catchTelegramError = ([endpoint,qs]) =>
+module.exports.catchTelegramError = ([endpoint, qs]) =>
   ({ description, status_code: code }) =>
     Promise.reject({ code, description, endpoint, qs })
 

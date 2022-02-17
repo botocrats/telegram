@@ -19,7 +19,7 @@ interface ITAnswerInlineQueryParameters {
   switch_pm_parameter?: string
 }
 export type TTAnswerInlineQueryMethod = (params: ITAnswerInlineQueryParameters) => Promise<true>
-interface ITChosenInlineResult {
+export interface ITChosenInlineResult {
   result_id: string
   from: ITUser
   location: ITLocationBasic

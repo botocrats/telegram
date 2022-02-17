@@ -36,7 +36,7 @@ export interface ITChatDetailed extends ITChat {
   linked_chat_id?: number
   location?: ITChatLocation
 }
-export type ITChatAdministrators = [ITChatMemberOwner,...ITChatMemberAdministrator[]]
+export type ITChatAdministrators = [ITChatMemberOwner, ...ITChatMemberAdministrator[]]
 export interface ITChatPermissions {
   can_send_messages?: boolean
   can_send_media_messages?: boolean
@@ -65,7 +65,7 @@ export type TTChatIdType = number | string // number: chat id, string: username
 export interface ITChatId {
   chat_id: TTChatIdType
 }
-export interface ITUserId extends ITChatId{ 
+export interface ITUserId extends ITChatId {
   user_id: number
 }
 

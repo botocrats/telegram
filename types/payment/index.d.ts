@@ -1,5 +1,5 @@
-import {JSON} from '..'
-import {ITUser} from '../user'
+import { JSON } from '..'
+import { ITUser } from '../user'
 import { TTCurrency } from './currency'
 
 export {TTCurrency}
@@ -101,6 +101,6 @@ export interface ITInvoiceProposal{
   is_flexible?: boolean
 }
 export interface ITPaymentMethods {
-  answerShippingQuery: (params: ITAnswerShippingQuerySuccessParams | ITAnswerShippingQueryFailParams)=> Promise<boolean>
-  answerPreCheckoutQuery: (params: ITAnswerPreCheckoutQuerySuccessParams | ITAnswerPreCheckoutQueryFailParams)=> Promise<boolean>
+  answerShippingQuery: (params: ITAnswerShippingQuerySuccessParams | ITAnswerShippingQueryFailParams) => Promise<boolean>
+  answerPreCheckoutQuery: (params: ITAnswerPreCheckoutQuerySuccessParams | ITAnswerPreCheckoutQueryFailParams) => Promise<boolean>
 }

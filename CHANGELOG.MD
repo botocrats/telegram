@@ -2,6 +2,10 @@
 
 ## 2022
 
+### February 17th
+
++ Interceptor
+
 ### February 14th
 
 + Missing types for InlineQueryResult added

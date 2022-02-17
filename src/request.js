@@ -12,14 +12,21 @@ const handleResponse = (request, debug) =>
       )
       .catch(handleError(debug))
 
-const handleFormData = (request) =>
-  (endpoint, params, formData = false) => {
-    if (formData) {
-      const form = new FormData();
-      Object.entries(params).forEach((i) => form.append(i[0], i[1]));
-      return request(endpoint, form, form.getHeaders())
+const handleFormData = (request, interceptor) =>
+  (method, params, formData = false) => {
+    // client can be interfered by defining interceptor callback.
+    if (interceptor) {
+      const result = interceptor(method, params, formData)
+      if(result instanceof Promise) return result
     }
-    return request(endpoint, params)
+    if (formData) {
+      const form = new FormData()
+      Object.entries(params).forEach((i) => form.append(i[0], i[1]))
+      return request(method, form, form.getHeaders())
+    }
+    return request(method, params)
   }
-module.exports = (url, debug) =>
-  handleResponse(handleFormData(require('bent')(url, 'json', 'POST')), debug)
+module.exports = (url, debug, interceptor) =>
+  handleResponse(
+    handleFormData(require('bent')(url, 'json', 'POST'), interceptor)
+    , debug)

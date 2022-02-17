@@ -23,11 +23,11 @@ interface ITUserProfilePhotos {
   photos: ITPhotoSize[]
 }
 
-type TTFileInfo = ITFile & {file_path:string}
+type TTFileInfo = ITFile & {file_path: string}
 
 type TFileExtension = string
 type TFileSize = number
-export interface ITFileMethods{
+export interface ITFileMethods {
   getUserProfilePhotos: (params: {user_id: number, offset?: number, limit?: number}) => Promise<ITUserProfilePhotos>
   getFile: (params: { fileId: string }) => Promise<TTFileInfo>
   download: (params: TTFileInfo) => [Buffer, TFileExtension, TFileSize]
