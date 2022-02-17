@@ -9,7 +9,7 @@ export interface ITInlineQuery {
   query: string
   offset: string
 }
-interface ITAnswerInlineQueryParameters {
+export interface ITAnswerInlineQueryParameters {
   inline_query_id: string
   results: TTInlineQueryResult[]
   cache_time: number

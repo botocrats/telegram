@@ -9,7 +9,7 @@ Simple, light-weight Telegram Bot Client for Node.js.
 [![quality][quality-image]][npm-url]
 [![last commit][lastcommit-image]][github-url]
 [![license mit][license-image]][github-url]
-![vulnerabilities][vulnerabilities-image]
+[![vulnerabilities][vulnerabilities-image]][npm-url]
 
 This library is part of [Botocrat Framework][framework-url] and can work as a standalone library.
 
@@ -23,7 +23,7 @@ This library is part of [Botocrat Framework][framework-url] and can work as a st
 
 ## What's missing?
 
-This library intented to make requests to Telegram Bot API server and handling responses only. Handling updates from telegram or other high level features is not a purpose of this library. Wait for the framework I'm currently working on, if you looking for such features.
+This library intented to make requests to Telegram Bot API server and handling responses only. Handling updates from telegram or other high level features is not a purpose of this library. Use the [framework][framework-url] to receive and handle updates.
 
 ## Getting started
 
@@ -53,14 +53,12 @@ const Message: ITMessage = {
   protect_content: true
 }
 const sent = await client.sendMessage(Message)
-
 ```
 
 ### Feature: Download File From Telegram
 
 ```typescript
 ...
-
 const [data, ext, size] = await client
   .getFile(incomingMessage.photo)
   .then(client.download) // Buffer
@@ -75,9 +73,8 @@ You can intercept the request by defining interceptor. This feature is implement
 
 ```typescript
 ...
-
 const client = createClient({
-  token: '123456789:BB...', 
+  token: '123456789:BB...',
   interceptor: (method, params, formData) => {
     console.log(`${method} called | ${Date.now()}`)
   }})

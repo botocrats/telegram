@@ -86,6 +86,7 @@ export * from './chat'
 export * from './user'
 export * from './message'
 export * from './objects'
+export * from './commands'
 
 declare const createTelegramClient: (options?: ITClientOptions) => ITelegramClient
 export default createTelegramClient
