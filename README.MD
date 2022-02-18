@@ -97,7 +97,7 @@ const client = createClient({
 | Param | Description | Default |
 |-|-|-|
 | debug | Debug function | null |
-| baseUri | Telegram API url | _https://api.telegram.org_ |
+| baseUri | Telegram API url | _<https://api.telegram.org>_ |
 | fileSizeLimit | Size limiter for .download() method | Infinity (no limit) |
 | interceptor | callback to intercept request before sent | null |
 

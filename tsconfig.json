@@ -1,8 +1,9 @@
 {
   "parser": "@typescript-eslint/parser",
   "include": [
-    "src/**/*.ts"
+    "types/**/*.ts"
   ],
+  "exclude": [],
   "compilerOptions": {
     "module": "commonjs",
     "noImplicitAny": true,
