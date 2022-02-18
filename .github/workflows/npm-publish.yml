@@ -17,7 +17,9 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npm test
-
+        env:
+          BOT_TOKEN: ${{secrets.BOT_TOKEN}}
+          TEST_CHAT_ID: ${{secrets.TEST_CHAT_ID}}
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
@@ -30,4 +32,4 @@ jobs:
       - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
