@@ -5,11 +5,14 @@ Simple, light-weight Telegram Bot Client for Node.js.
 [![NodeJS][nodejs-image]][npm-url]
 [![npm][npm-image]][npm-url]
 [![telegram 5.7][telegram-image]][telegram-url]
-[![size][size-image]][npm-url]
-[![quality][quality-image]][npm-url]
-[![last commit][lastcommit-image]][github-url]
+[![quality][npm-quality-image]][npm-url]
 [![license mit][license-image]][github-url]
+
+[![last commit][lastcommit-image]][github-url]
+[![size][size-image]][npm-url]
 [![vulnerabilities][vulnerabilities-image]][npm-url]
+[![Total alerts][alerts-image]][alerts-url]
+[![Code quality][quality-image]][quality-url]
 
 This library is part of [Botocrat Framework][framework-url] and can work as a standalone library.
 
@@ -110,7 +113,7 @@ MIT License
 
 [license-image]: https://img.shields.io/github/license/botocrats/telegram?style=flat-square
 [size-image]: https://img.shields.io/bundlephobia/minzip/@botocrat/telegram?style=flat-square
-[quality-image]: https://img.shields.io/npms-io/quality-score/@botocrat/telegram?style=flat-square
+[npm-quality-image]: https://img.shields.io/npms-io/quality-score/@botocrat/telegram?style=flat-square
 [nodejs-image]: https://img.shields.io/badge/library-NodeJS-darkgreen.svg?style=flat-square
 [telegram-image]: https://img.shields.io/github/package-json/api-version/botocrats/telegram?label=telegram%20bot%20api%20&logo=telegram
 [npm-image]: https://img.shields.io/npm/v/@botocrat/telegram.svg?style=flat-square
@@ -123,3 +126,7 @@ MIT License
 [bent-url]: https://github.com/mikeal/bent
 [size-comparison]: https://packagephobia.com/result?p=%40botocrat%2Ftelegram%2Ctelegraf%2Cnode-telegram-bot-api%2Cslimbot%2Ctelebot
 [framework-url]: https://npmjs.org/package/@botocrat/core
+[alerts-url]: https://lgtm.com/projects/g/botocrats/telegram/alerts/
+[alerts-image]: https://img.shields.io/lgtm/alerts/g/botocrats/telegram.svg?logo=lgtm&logoWidth=18
+[quality-image]: https://img.shields.io/lgtm/grade/javascript/g/botocrats/telegram.svg?logo=lgtm&logoWidth=18
+[quality-url]: https://lgtm.com/projects/g/botocrats/telegram/context:javascript

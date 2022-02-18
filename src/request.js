@@ -26,7 +26,21 @@ const handleFormData = (request, interceptor) =>
     }
     return request(method, params)
   }
+
+const attachInterceptor = (interceptor, next) => 
+  interceptor
+    ? (...params) => {
+      const handle = interceptor(...params)
+      return handle instanceof Promise 
+        ? handle
+        : next(...params)
+    } 
+    : next
+
 module.exports = (url, debug, interceptor) =>
-  handleResponse(
-    handleFormData(require('bent')(url, 'json', 'POST'), interceptor)
-    , debug)
+  attachInterceptor(
+    interceptor,
+    handleResponse(
+      handleFormData( require('bent')(url, 'json', 'POST') ),
+      debug)
+  )
