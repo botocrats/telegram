@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/botocrats/telegram#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.33.1",
     "eslint": "^8.22.0"
   }
